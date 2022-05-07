@@ -1,0 +1,19 @@
+Plan:
+
+- Go over instruction and make sure they are clear and correct.
+- check and see that game does what it is supposed to.
+- test all buttons and make sure they do the correct function.
+
+Cases:
+
+- read the instructions
+- pressed see all bots
+- clicked on draw
+- choose two bots
+- press dual
+- pressed play again
+
+Bugs:
+
+- see all bots buttons
+- when you win it shows as losses

@@ -10,6 +10,7 @@ beforeEach(async () => {
 })
 
 afterAll(async () => {
+    driver.sleep(1000)
     driver.quit()
 })
 
@@ -18,3 +19,25 @@ test('Title shows up when page loads', async () => {
     const displayed = await title.isDisplayed()
     expect(displayed).toBe(true)
 })
+
+driver.sleep(1000)
+
+test('clicking draw button displays bot choices', async () => {
+    const draw = await driver.findElement(By.id('draw'))
+    await draw.click()
+    const choices = await driver.findElement(By.id('choices'))
+    const displayed = await choices.isDisplayed()
+    expect(displayed).toBe(true)
+})
+
+test('Clicking "Add to Duo" displays "Your Duo"', async () => {
+    await driver.findElement(By.id('draw')).click()
+    driver.sleep(500)
+    await driver.findElement(By.xpath('//button[@class="bot-btn"]')).click()
+    driver.sleep(1000)
+    const duo = await driver.findElement(By.id('player-duo'))
+    const displayed = await duo.isDisplayed()
+    expect(displayed).toBeTruthy()
+})
+
+
