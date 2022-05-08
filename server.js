@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "./public")))
 
 app.get('/api/robots', (req, res) => {
     try {
-        rollbar.log("Bots retrieved");
+        rollbar.log("Bots returned");
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
@@ -79,7 +79,7 @@ app.post('/api/duel', (req, res) => {
             res.status(200).send('You lost!')
         } else {
             playerRecord.losses++
-            rollbar.log("Player won this match")
+            rollbar.log("Player won match")
             res.status(200).send('You won!')
         }
     } catch (error) {
