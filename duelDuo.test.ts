@@ -32,9 +32,9 @@ test('Clicking draw button displays bot choices', async () => {
 
 test('Clicking "Add to Duo" displays "Your Duo"', async () => {
     await driver.findElement(By.id('draw')).click()
-    driver.sleep(500)
+    driver.sleep(300)
     await driver.findElement(By.xpath('//button[@class="bot-btn"]')).click()
-    driver.sleep(500)
+    driver.sleep(300)
     const duo = await driver.findElement(By.id('player-duo'))
     const displayed = await duo.isDisplayed()
     expect(displayed).toBeTruthy()
