@@ -88,6 +88,8 @@ app.post('/api/duel', (req, res) => {
     }
 })
 
+app.use(rollbar.errorHandler());
+
 app.get('/api/player', (req, res) => {
     try {
         res.status(200).send(playerRecord)

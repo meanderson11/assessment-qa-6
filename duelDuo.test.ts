@@ -22,7 +22,7 @@ test('Title shows up when page loads', async () => {
 
 driver.sleep(1000)
 
-test('clicking draw button displays bot choices', async () => {
+test('Clicking draw button displays bot choices', async () => {
     const draw = await driver.findElement(By.id('draw'))
     await draw.click()
     const choices = await driver.findElement(By.id('choices'))
