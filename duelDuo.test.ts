@@ -1,18 +1,14 @@
-
 import { Builder, Capabilities, By } from "selenium-webdriver"
-
 require('chromedriver')
 
 const driver = new Builder().withCapabilities(Capabilities.chrome()).build()
 
-beforeEach(async () => {
+beforeEach(() => {
     driver.get('http://localhost:3000/')
 })
-
 afterEach(async () => {
     await driver.sleep(1000)
 })
-
 afterAll(async () => {
     await driver.quit()
 })
@@ -22,8 +18,6 @@ test('Title shows up when page loads', async () => {
     const displayed = await title.isDisplayed()
     expect(displayed).toBe(true)
 })
-
-
 
 test('Clicking draw button displays bot choices', async () => {
     const draw = await driver.findElement(By.id('draw'))
@@ -43,5 +37,3 @@ test('Clicking "Add to Duo" displays "Your Duo"', async () => {
     const displayed = await duo.isDisplayed()
     expect(displayed).toBeTruthy()
 })
-
-// driver.quit()
